@@ -2,6 +2,8 @@
 
 One page that shows what is running and what is deployed, across all pipelines in a project.
 
+![CI/CD Overview showing pipelines, recent runs and stage status](images/screenshot-1.png)
+
 ## What you get
 
 - **Latest deployment per stage** - for example which version is currently in Test and Prod.
