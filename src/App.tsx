@@ -63,7 +63,7 @@ export function App({ api }: AppProps) {
     <div className="dashboard">
       <header className="dashboard-header">
         <div>
-          <h1>CI/CD Dashboard</h1>
+          <h1>CI/CD Overview</h1>
           <div className="app-version">
             v{__APP_VERSION__} · built {__BUILD_TIME__}
           </div>

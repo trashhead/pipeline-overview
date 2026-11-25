@@ -1,4 +1,4 @@
-# CI/CD Dashboard
+# CI/CD Overview
 
 One page that shows what is running and what is deployed, across all pipelines in a project.
 
@@ -16,4 +16,4 @@ Read-only. The extension only asks for permission to read builds and project inf
 
 ## Where to find it
 
-Pipelines > CI/CD Dashboard.
+Pipelines > CI/CD Overview.
