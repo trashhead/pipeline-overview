@@ -1,0 +1,353 @@
+:root {
+  --color-succeeded: #107c10;
+  --color-succeeded-background: #dff6dd;
+  --color-failed: #d13438;
+  --color-failed-background: #fde7e9;
+  --color-running: #0078d4;
+  --color-running-background: #deecf9;
+  --color-partial: #ca5010;
+  --color-partial-background: #fff4ce;
+  --color-neutral: #605e5c;
+  --color-neutral-background: #f3f2f1;
+  --color-border: #edebe9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 12px;
+  color: #201f1e;
+  background: #fff;
+}
+
+.dashboard {
+  padding: 16px 24px;
+}
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.summary-counts {
+  display: flex;
+  gap: 10px;
+}
+
+.summary-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 16px 0;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.filter-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 12px;
+}
+
+.filter-select select {
+  margin-left: 4px;
+  border: none;
+  font-weight: 600;
+  background: transparent;
+}
+
+.section-title {
+  margin: 24px 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.error-banner {
+  padding: 8px 12px;
+  color: var(--color-failed);
+  background: var(--color-failed-background);
+}
+
+.loading {
+  padding: 8px 0;
+  color: var(--color-neutral);
+}
+
+.pipeline-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap: 16px;
+  padding: 16px 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.pipeline-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-running);
+  text-decoration: none;
+}
+
+.pipeline-project {
+  color: var(--color-neutral);
+}
+
+.deployment-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.deployment-badge {
+  min-width: 100px;
+  padding: 6px 10px;
+  border-radius: 14px;
+  color: var(--color-succeeded);
+  background: var(--color-succeeded-background);
+}
+
+.deployment-badge-title {
+  font-weight: 700;
+}
+
+.deployment-badge-meta {
+  font-size: 10px;
+  color: var(--color-neutral);
+}
+
+.run-entry {
+  margin-bottom: 12px;
+}
+
+.run-entry-header {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  color: var(--color-neutral);
+}
+
+.run-build-number {
+  font-weight: 600;
+  color: var(--color-running);
+  text-decoration: none;
+}
+
+.run-stages {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 10px;
+  border-radius: 12px;
+  color: var(--color-neutral);
+  background: var(--color-neutral-background);
+}
+
+.status-pill.status-succeeded,
+.summary-count.status-succeeded {
+  color: var(--color-succeeded);
+}
+
+.status-pill.status-succeeded {
+  background: var(--color-succeeded-background);
+}
+
+.status-pill.status-running,
+.summary-count.status-running {
+  color: var(--color-running);
+}
+
+.status-pill.status-running {
+  background: var(--color-running-background);
+}
+
+.status-pill.status-failed,
+.summary-count.status-failed {
+  color: var(--color-failed);
+}
+
+.status-pill.status-failed {
+  background: var(--color-failed-background);
+}
+
+.status-pill.status-partial,
+.summary-count.status-partial {
+  color: var(--color-partial);
+}
+
+.status-pill.status-partial {
+  background: var(--color-partial-background);
+}
+
+.pipeline-info-column {
+  color: var(--color-neutral);
+  font-size: 11px;
+}
+
+.status-pill.awaiting-approval {
+  color: var(--color-running);
+  background: var(--color-running-background);
+}
+
+.status-pill.clickable {
+  border: none;
+  font: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.last-updated {
+  color: var(--color-neutral);
+  white-space: nowrap;
+}
+
+.spinner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  box-sizing: border-box;
+  border: 2px solid rgba(0, 120, 212, 0.25);
+  border-top-color: var(--color-running);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.app-version {
+  color: var(--color-neutral);
+  font-size: 11px;
+}
+
+.refresh-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-running);
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.refresh-button:hover:not(:disabled) {
+  background: var(--color-running-background);
+  border-color: var(--color-running);
+}
+
+.refresh-button:focus-visible {
+  outline: 2px solid var(--color-running);
+  outline-offset: 2px;
+}
+
+.refresh-button:disabled {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.refresh-icon.spinning {
+  animation: spin 0.8s linear infinite;
+}
+
+/* Fixed width and tabular digits so the controls to the right never shift while updating. */
+.last-updated {
+  min-width: 150px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.filter-select {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+/* Narrow windows (for example a split tab): wrap instead of overflowing. */
+.dashboard {
+  min-width: 0;
+}
+
+.dashboard-header,
+.filter-bar {
+  flex-wrap: wrap;
+}
+
+.filter-bar {
+  gap: 8px 20px;
+}
+
+.filter-input {
+  flex: 1 1 180px;
+  min-width: 120px;
+}
+
+.pipeline-row {
+  grid-template-columns: 200px minmax(0, 1fr) 200px;
+}
+
+.run-entry-header {
+  flex-wrap: wrap;
+}
+
+.run-stages,
+.deployment-badges {
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1000px) {
+  .pipeline-row {
+    grid-template-columns: 160px minmax(0, 1fr);
+  }
+
+  .pipeline-info-column {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard {
+    padding: 12px;
+  }
+
+  .pipeline-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .pipeline-info-column {
+    grid-column: 1;
+  }
+}

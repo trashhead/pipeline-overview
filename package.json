@@ -1,0 +1,27 @@
+{
+  "name": "pipeline-overview",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "package": "npm run build && tfx extension create --manifest-globs vss-extension.json --output-path dist-extension"
+  },
+  "dependencies": {
+    "azure-devops-extension-api": "^5.281.0",
+    "azure-devops-extension-sdk": "^4.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "zustand": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "*",
+    "@types/react": "^19.3.2",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.3.0",
+    "tfx-cli": "^0.24.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.8"
+  }
+}

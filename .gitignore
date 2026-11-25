@@ -1,0 +1,8 @@
+node_modules
+dist
+dist-extension
+*.vsix
+.env.local
+.env
+.env.*
+!.env.example

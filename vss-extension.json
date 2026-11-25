@@ -1,0 +1,59 @@
+{
+  "manifestVersion": 1,
+  "id": "pipeline-overview",
+  "publisher": "ViktorEriksson",
+  "version": "0.1.0",
+  "name": "CI/CD Dashboard",
+  "description": "Overview of pipelines, runs and stage status per environment.",
+  "categories": [
+    "Azure Pipelines"
+  ],
+  "targets": [
+    {
+      "id": "Microsoft.VisualStudio.Services"
+    }
+  ],
+  "scopes": [
+    "vso.build",
+    "vso.project"
+  ],
+  "files": [
+    {
+      "path": "dist",
+      "addressable": true
+    },
+    {
+      "path": "images/icon.png",
+      "addressable": true
+    }
+  ],
+  "contributions": [
+    {
+      "id": "cicd-dashboard-hub",
+      "type": "ms.vss-web.hub",
+      "targets": [
+        "ms.vss-build-web.build-release-hub-group"
+      ],
+      "properties": {
+        "name": "CI/CD Dashboard",
+        "uri": "dist/index.html",
+        "order": 50
+      }
+    }
+  ],
+  "icons": {
+    "default": "images/icon.png"
+  },
+  "content": {
+    "details": {
+      "path": "overview.md"
+    }
+  },
+  "tags": [
+    "pipelines",
+    "dashboard",
+    "ci",
+    "cd",
+    "deployments"
+  ]
+}
