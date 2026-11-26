@@ -248,6 +248,19 @@ body {
   font-size: 11px;
 }
 
+.dashboard-footer {
+  margin-top: 24px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(128, 128, 128, 0.25);
+  color: var(--color-neutral);
+  font-size: 12px;
+}
+
+.dashboard-footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 .refresh-button {
   display: inline-flex;
   align-items: center;

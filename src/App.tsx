@@ -6,6 +6,8 @@ import { FilterBar } from "./components/FilterBar";
 import { PipelineRow } from "./components/PipelineRow";
 import { SummaryCounts } from "./components/SummaryCounts";
 
+const FEEDBACK_URL = "https://github.com/trashhead/pipeline-overview/issues";
+
 interface AppProps {
   api: DashboardApi;
 }
@@ -82,6 +84,13 @@ export function App({ api }: AppProps) {
       {visiblePipelines.map((pipeline) => (
         <PipelineRow key={pipeline.id} pipeline={pipeline} />
       ))}
+
+      <footer className="dashboard-footer">
+        CI/CD Overview is an Azure DevOps extension.{" "}
+        <a href={FEEDBACK_URL} target="_blank" rel="noopener noreferrer">
+          Report a problem or suggest an improvement
+        </a>
+      </footer>
     </div>
   );
 }
