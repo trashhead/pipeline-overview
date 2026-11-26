@@ -2,7 +2,7 @@
   "manifestVersion": 1,
   "id": "pipeline-overview",
   "publisher": "ViktorEriksson",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "name": "CI/CD Overview",
   "description": "Overview of pipelines, runs and stage status per environment. Read-only: it never starts, changes or approves anything.",
   "categories": [

@@ -50,3 +50,18 @@ export interface LatestDeployment {
 export interface DashboardApi {
   loadPipelines(): Promise<Pipeline[]>;
 }
+
+export type StatusOrder = "attention-first" | "name";
+
+/** The choices in the filter bar that are remembered between visits. */
+export interface DashboardSettings {
+  statusOrder: StatusOrder;
+  runsToShow: number;
+  refreshIntervalSeconds: number;
+}
+
+export interface SettingsStorage {
+  /** The saved value is returned unchecked, see pickValidSettings. */
+  load(): Promise<unknown>;
+  save(settings: DashboardSettings): Promise<void>;
+}

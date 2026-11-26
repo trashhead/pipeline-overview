@@ -1,10 +1,6 @@
-import type { DashboardApi } from "../types";
-import {
-  REFRESH_INTERVAL_OPTIONS,
-  RUNS_TO_SHOW_OPTIONS,
-  useDashboardStore,
-  type StatusOrder,
-} from "../store/dashboardStore";
+import type { DashboardApi, StatusOrder } from "../types";
+import { useDashboardStore } from "../store/dashboardStore";
+import { REFRESH_INTERVAL_OPTIONS, RUNS_TO_SHOW_OPTIONS } from "../settings/settingsOptions";
 
 interface FilterBarProps {
   api: DashboardApi;
